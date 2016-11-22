@@ -16,13 +16,17 @@ def prune_string(string, c)
   end
 end
 
+def prune_string_golf(string, c)
+  string.to_s.split("").reject.with_index { |x, i| i > 0 && x != c }.join("")
+end
+
 strings = [
   ["code.stackexchange.com", "e", "ceee"],
   ["laughter is the best medicine", "i", "liii"]
 ]
 
 strings.each do |test|
-  result = prune_string test[0], test[1]
+  result = prune_string_golf test[0], test[1]
   puts result + (result == test[2] ? ": PASSED" : ": FAILED")
 end
 
