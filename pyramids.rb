@@ -1,5 +1,7 @@
 #!/usr/bin/ruby
 
+# Reference: http://codegolf.stackexchange.com/questions/100773/build-an-alphabet-pyramid
+
 def create_pyramid(size)
   p = ""
   (0...size-1).each do |i|
