@@ -22,7 +22,7 @@ def prune_string_golf(s, c)
   s.to_s.split("").reject.with_index { |x, i| i > 0 && x != c }.join("")
 end
 
-strings = [
+tests = [
   ["code.stackexchange.com", "e", "ceee"],
   ["laughter is the best medicine", "i", "liii"],
   ["Hello world!", "!", "H!"],
@@ -30,7 +30,7 @@ strings = [
   ["Test Cases", "s", "Tsss"],
 ]
 
-strings.each do |test|
+tests.each do |test|
   result = prune_string test[0], test[1]
   result_golf = prune_string_golf test[0], test[1]
   puts result + (result == test[2] ? ": PASSED" : ": FAILED")
